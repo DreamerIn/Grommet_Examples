@@ -1,6 +1,8 @@
 import "./styles.css";
-import { Box, Menu, Text } from "grommet";
+import { Box, Menu, Text, Button } from "grommet";
 import { User } from "grommet-icons";
+import { useState } from "react";
+import { FilterLayer } from "./FilterLayer";
 const items = [
   {
     label: "User"
@@ -10,9 +12,10 @@ const items = [
   }
 ];
 export default function App() {
+  const [showAdvanceFilter, setShowAdvanceFilter] = useState(false);
   return (
     <div className="App">
-      <Menu
+      {/* <Menu
         icon={false}
         label={
           <Box direction="row" alignSelf="center">
@@ -22,6 +25,12 @@ export default function App() {
         }
         items={items}
       />
+      <Button
+        label="Show Advance Filter"
+        onClick={() => setShowAdvanceFilter(!showAdvanceFilter)}
+      />
+      {(showAdvanceFilter && <>Test</>) || ""} */}
+      <FilterLayer />
     </div>
   );
 }
